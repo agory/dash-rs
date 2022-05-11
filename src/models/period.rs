@@ -2,6 +2,8 @@ use super::{representations::AdaptationSet, segments::*, utils::*};
 use crate::serde_custom::duration_iso_8601;
 use chrono::Duration;
 use serde::{Deserialize, Serialize};
+use std::fmt;
+use std::fmt::Formatter;
 
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 #[serde(rename_all = "PascalCase")]
@@ -36,4 +38,20 @@ pub struct Period {
     adaptations: Vec<AdaptationSet>,
     #[serde(rename = "Subset", default)]
     subsets: Vec<Subset>,
+}
+
+impl fmt::Display for Period {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        writeln!(f, "Period ID : {}", &self.id)?;
+
+        if self.start.is_some() {
+            write!(f, "Start : {}", self.start.unwrap())?;
+        }
+
+        if self.duration.is_some() {
+            write!(f, "Duration : {}", self.duration.unwrap())?;
+        }
+
+        Ok(())
+    }
 }

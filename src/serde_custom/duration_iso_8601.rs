@@ -10,7 +10,7 @@ const SECONDS_AS_MS: i64 = 1000;
 #[derive(Debug)]
 enum Iso8601Error {
     InvalidFormat(String, String),
-    NotImpemented(String, String),
+    NotImplemented(String, String),
     InvalidNumberFormat(String, String),
     InvalidTokenPeriod(char, String),
     InvalidTokenTime(char, String),
@@ -51,7 +51,7 @@ impl std::fmt::Display for Iso8601Error {
                     message, value
                 )
             }
-            Iso8601Error::NotImpemented(message, value) => {
+            Iso8601Error::NotImplemented(message, value) => {
                 write!(
                     f,
                     "Not Implemented ISO_8601 Duration: {} > {}",
@@ -106,7 +106,7 @@ impl Iso8601 {
                             str_sequence.to_string(),
                         ));
                     }
-                    return Err(Iso8601Error::NotImpemented(
+                    return Err(Iso8601Error::NotImplemented(
                         "Year (Y)".into(),
                         str_sequence.to_string(),
                     ));
@@ -149,7 +149,7 @@ impl Iso8601 {
                 }
                 ('M', true) => {
                     if !time {
-                        return Err(Iso8601Error::NotImpemented(
+                        return Err(Iso8601Error::NotImplemented(
                             "Month (M)".into(),
                             str_sequence.to_string(),
                         ));
