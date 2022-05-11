@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-<!-- Just In Time Delivered by Quortex Solution -->
 <MPD availabilityStartTime="1970-01-01T00:00:00Z" minBufferTime="PT5.76S" minimumUpdatePeriod="PT5.76S" profiles="urn:mpeg:dash:profile:isoff-live:2011,urn:hbbtv:dash:profile:isoff-live:2012" publishTime="2021-11-28T15:42:44Z" suggestedPresentationDelay="PT12S" timeShiftBufferDepth="PT2M24S" type="dynamic" xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:cenc="urn:mpeg:cenc:2013" xmlns:mspr="urn:microsoft:playready" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 DASH-MPD.xsd">
 	<Period id="3" start="PT1631626458S">
 		<AdaptationSet contentType="video" id="1" mimeType="video/mp4" segmentAlignment="true" startWithSAP="1">
